@@ -1,8 +1,8 @@
-﻿using Laba2View;
+﻿using Laba2Model;
 using System;
 using System.Windows.Forms;
 
-namespace Laba2Model
+namespace Laba2View
 {
     public partial class AmountWindow : Form
     {

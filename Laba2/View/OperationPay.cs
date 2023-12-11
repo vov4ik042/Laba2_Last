@@ -84,6 +84,7 @@ namespace Laba2View
             TotalSum += DeliverySumPayRetail;
             label7.Text = $"{DeliverySumPayRetail.ToString()} UAH";
             label4.Text = $"{TotalSum.ToString()} UAH";
+            radioButton3.Enabled = false;
         }
 
         private void button2_Click(object sender, System.EventArgs e)//Loyalty card button

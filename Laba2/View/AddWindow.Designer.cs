@@ -1,4 +1,4 @@
-﻿namespace Laba2Model
+﻿namespace Laba2View
 {
     partial class AddWindow
     {

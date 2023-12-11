@@ -1,7 +1,8 @@
-﻿using System.Drawing;
+﻿using Laba2Model;
+using System.Drawing;
 using System.Windows.Forms;
 
-namespace Laba2Model
+namespace Laba2View
 {
     public partial class AddWindow : Form
     {

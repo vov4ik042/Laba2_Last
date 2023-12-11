@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\AddWindow.cs">
+    <Compile Include="View\AddWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Model\AddWindow.Designer.cs">
+    <Compile Include="View\AddWindow.Designer.cs">
       <DependentUpon>AddWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AdminWindow.cs">
@@ -58,10 +58,10 @@
     <Compile Include="View\AdminWindow.Designer.cs">
       <DependentUpon>AdminWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\AmountWindow.cs">
+    <Compile Include="View\AmountWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Model\AmountWindow.Designer.cs">
+    <Compile Include="View\AmountWindow.Designer.cs">
       <DependentUpon>AmountWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\EnableOrDisable.cs" />
@@ -113,13 +113,13 @@
     <Compile Include="View\ViewProducts.Designer.cs">
       <DependentUpon>ViewProducts.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Model\AddWindow.resx">
+    <EmbeddedResource Include="View\AddWindow.resx">
       <DependentUpon>AddWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AdminWindow.resx">
       <DependentUpon>AdminWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Model\AmountWindow.resx">
+    <EmbeddedResource Include="View\AmountWindow.resx">
       <DependentUpon>AmountWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EntryWindow.resx">
