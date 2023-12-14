@@ -7,8 +7,6 @@ namespace Laba2View
 {
     public partial class LastWindowPay : Form
     {
-        private delegate void AmountThings();
-        private event AmountThings ReplenishBase;
         private byte TypeOfOperation { get; set; }
         private double AverageAmountThings { get; set; }
         private bool DeliveryWasUsed { get; set; }
@@ -19,18 +17,7 @@ namespace Laba2View
         private static string NameOfCasa { get; set; }
         public LastWindowPay()
         {
-            ReplenishBase += ReplenishAmountProducts;
             InitializeComponent();
-        }
-        private void ReplenishAmountProducts()
-        {
-            for (int i = 0; i < Products.ProductsListBase.Count; i++)
-            {
-                if (Products.ProductsListBase[i].NumberOfProducts < 10)
-                {
-                    Products.ProductsListBase[i].NumberOfProducts = 10;
-                }
-            }
         }
 
         public LastWindowPay(Guid id, string name)
@@ -105,7 +92,6 @@ namespace Laba2View
                                     DialogResult dialogResult = MessageBox.Show("Success", "Congratulations", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     if (dialogResult == DialogResult.OK)
                                     {
-                                        ReplenishBase.Invoke();
                                         Application.Exit();
                                     }
                                 }
@@ -136,7 +122,6 @@ namespace Laba2View
                                 DialogResult dialogResult = MessageBox.Show("Success", "Congratulations", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 if (dialogResult == DialogResult.OK)
                                 {
-                                    ReplenishBase.Invoke();
                                     Application.Exit();
                                 }
                             }
@@ -170,7 +155,6 @@ namespace Laba2View
                                 DialogResult dialogResult = MessageBox.Show("Success", "Congratulations", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 if (dialogResult == DialogResult.OK)
                                 {
-                                    ReplenishBase.Invoke();
                                     Application.Exit();
                                 }
                             }
@@ -202,7 +186,6 @@ namespace Laba2View
                         DialogResult dialogResult = MessageBox.Show("Success", "Congratulations", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dialogResult == DialogResult.OK)
                         {
-                            ReplenishBase.Invoke();
                             Application.Exit();
                         }
                     }
@@ -219,7 +202,6 @@ namespace Laba2View
                     DialogResult dialogResult = MessageBox.Show("Success", "Congratulations", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (dialogResult == DialogResult.OK)
                     {
-                        ReplenishBase.Invoke();
                         Application.Exit();
                     }
                 }

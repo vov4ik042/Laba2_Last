@@ -11,7 +11,6 @@ namespace Laba2View
         public static bool MainUpdateView { get; set; }
         private double PriceForThing { get; set; }
         private int AmountOfThings { get; set; }
-        private double SumPay { get; set; }
         private int selectedRowIndex { get; set; }
         private static bool Online { get; set; }
 
@@ -25,7 +24,17 @@ namespace Laba2View
         private Guid IdOfCasa { get; set; }
 
         private bool MainViewFormClosingBool { get; set; }
-        public Action ThingsForDiscount;
+        private double _sumPay;
+        private double SumPay
+        {
+            get => _sumPay;
+            set
+            {
+                _sumPay = value;
+                HappyNewYearChanged?.Invoke(this, EventArgs.Empty);
+            }
+        }
+        public event EventHandler HappyNewYearChanged;
 
         public MainView(double ConstTotalSum, bool WasClosed)
         {
@@ -47,8 +56,8 @@ namespace Laba2View
         }
         public MainView()
         {
+            HappyNewYearChanged += ShowNewYear;
             InitializeComponent();
-            ThingsForDiscount += ShowDiscountNow;
             if (Products.ProductsListClient.Count > 0)
             {
                 Products products = new Products();
@@ -60,9 +69,9 @@ namespace Laba2View
                 dataGridView1.DataSource = _bs;
             }
         }
-        private void ShowDiscountNow()
+        private void ShowNewYear(object sender, EventArgs e)
         {
-            this.Text = "Happy New Year! ";
+            button4.Text = "Happy New Year!";
             Transactions transactions = new Transactions();
             transactions.AddTransaction(IdOfCasa, Guid.NewGuid(), NameOfCasa, DateTime.Now, SumPay, "EVENT", "EVENT", false, false);
             transactions.WriteTransactionsIntoFile();
@@ -83,7 +92,6 @@ namespace Laba2View
         {
             AddWindow AddProducts = new AddWindow(Online);
             AddProducts.Show();
-            ThingsForDiscount.Invoke();
         }
 
         private void MainView_Activated(object sender, EventArgs e)

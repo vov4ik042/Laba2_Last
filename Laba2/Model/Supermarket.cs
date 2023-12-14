@@ -25,6 +25,7 @@ namespace Laba2Model
         private bool ResultParse { get; set; }
 
         public static Dictionary<Guid, string> dict = new Dictionary<Guid, string>();
+        public event EventHandler SomeEvent;
         public Supermarket()
         {
 
@@ -49,7 +50,7 @@ namespace Laba2Model
             SumMoneySupermarket += DefaultMoneyCasa;
             ViewInformationSupermarket.ViewInformationSupermarketUpdateNewCASA(NumberOfCasas, DefaultMoneyCasa);
             MainView mainView = new MainView(1);
-            mainView.ThingsForDiscount += Action;
+            mainView.HappyNewYearChanged += SomeEvent;//
         }
         public static void DecreaseValueDictSumDefault()
         {
